@@ -1,0 +1,70 @@
+<html ng-app="myApp">
+<head>
+  <meta name="viewport" content="width=device-width, height=device-height" />
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+  <link rel="stylesheet" href="lib/css/miru-canvas.css">
+  <script>
+  </script>
+</head>
+<body ng-controller="myController" onload="onload();">
+  <ul>
+    <li>
+      <a href="#" onclick="myCanvas.download();">download</a>
+      <button onclick="myCanvas.openImage()">open Image</button>
+      <button onclick="myCanvas.cmdHistory.undo()">undo</button>
+      <button onclick="myCanvas.cmdHistory.redo()">redo</button>
+    </li>
+    <li>
+      <button onclick="myCanvas.addBox()">add box</button>
+      <button onclick="myCanvas.selection.delete()">remove selected box</button>
+    </li>
+    <li>
+      <input id="width_range" type="range" min="1" max="30" onchange="onWidthChange(this);"> <span id="width_value"></span> <span id="width_view"></span>
+    </li>
+    <li>
+      <input id="color_range" type="color" onchange="onColorChange(this);"> <span id="color_value"></span> 
+    </li>
+    <li>
+      <input type="radio" name="DragMode" onclick="onDragSet(this);" checked> Draw <br>
+      <input type="radio" name="DragMode" onclick="onEraserSet(this);"> Eraser <br>
+      <input type="radio" name="DragMode" onclick="onBackMoveSet(this);"> Image move <br>
+      <input type="radio" name="DragMode" onclick="onSelectionSet(this);"> Selection mode <br>
+    </li>
+    <li>
+      <input type="checkbox" name="RoundedMode" onclick="onSetRounded(this);"> Rounded edge <br>
+    </li>
+    <li>
+      <input id="zoom_range" type="range" min="20" max="400" onchange="onZoomChange(this);"> <span id="zoom_value">100%</span> 
+    </li>
+    <li>
+      <input id="rotate_range" type="range" min="-180" max="180" onchange="onRotateChange(this);"> <span id="rotate_value"></span> 
+    </li>
+  </ul>
+
+  <div class="canvasWrapper">
+    <div id="canvas0"></div>
+  </div>
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+
+  <script src="lib/js/miru-canvas.js"></script>  
+</body>
+</html>

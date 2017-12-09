@@ -1,5 +1,9 @@
 {
   "name": "miru-canvas",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "main": [
+    "lib/js/miru-canvas.js",
+    "lib/css/miru-canvas.css"
+  ]
 }

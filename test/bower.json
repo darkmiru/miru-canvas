@@ -1,0 +1,11 @@
+{
+  "name": "miru-canva-test",
+  "dependencies": {}
+  // ,
+  // "overrides": {
+  //   "miru-canvas": {
+  //     "main": [
+  //     ]
+  //   }
+  // }
+}
